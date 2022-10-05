@@ -1,7 +1,7 @@
 # SFDC_Opportunity_Trigger
 This is a Trigger for Opportunity &amp; Opportunity Line Item.
 
-## <Trigger>
+<Trigger>
 
 1. 
 Opportunity의 현재 stage와 상관없이,
