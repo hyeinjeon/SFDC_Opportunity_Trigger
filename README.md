@@ -1,7 +1,7 @@
 # SFDC_Opportunity_Trigger
 This is a Trigger for Opportunity &amp; Opportunity Line Item.
 
-<Trigger>
+## Trigger
 
 1. 
 Opportunity의 현재 stage와 상관없이,
@@ -10,7 +10,7 @@ Opportunity Line Item이 존재하면, (그리고 Quote가 없다면,)
 Quote를 생성한다.
 
 2. 
-그리고 Quote Line Item을 함께 추가한다.
+그리고 위에 만들어진 Quote에 Quote Line Item을 함께 추가한다.
 
 3.
 Opportunity Line Item 생성시, 업데이트시, 삭제시,
