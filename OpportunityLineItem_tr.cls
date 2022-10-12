@@ -70,7 +70,7 @@ public with sharing class OpportunityLineItem_tr extends TriggerHandler {
         // 최신의 quote 만 가져오기 위해 만든 변수
         String OppId;
 
-        if(listQuotes.size() > 0) {
+        if(!listQuotes.isEmpty()) {
             for(Quote objQuote : listQuotes) {
                 // 최신의 quote 만 가져오게 하는 if문
                 if(OppId != objQuote.OpportunityId) {
@@ -96,7 +96,7 @@ public with sharing class OpportunityLineItem_tr extends TriggerHandler {
             }
         }
 
-        if(listQuoteLineItems.size() > 0) {
+        if(!listQuoteLineItems.isEmpty()) {
             insert listQuoteLineItems;
         }
     }
