@@ -139,7 +139,7 @@ public with sharing class OpportunityLineItem_tr extends TriggerHandler {
         // update 할 QLI list
         List<QuoteLineItem> listQuoteLineItems2 = new List<QuoteLineItem>();
 
-        if (mapOppToQuote.size() > 0) {
+        if (!mapOppToQuote.isEmpty()) {
             for (OpportunityLineItem objOLI : listNew) {
                 // 최신의 quote 를 target quote 로 지정
                 Quote TargetQuote = mapOppToQuote.get(objOLI.OpportunityId) != null ? mapOppToQuote.get(objOLI.OpportunityId) : null;
@@ -166,7 +166,7 @@ public with sharing class OpportunityLineItem_tr extends TriggerHandler {
             }
         }
 
-        if(listQuoteLineItems2.size() > 0) {
+        if(!listQuoteLineItems2.isEmpty()) {
             update listQuoteLineItems2;
         }
 
@@ -212,7 +212,7 @@ public with sharing class OpportunityLineItem_tr extends TriggerHandler {
 
         List<QuoteLineItem> listQuoteLineItems2 = new List<QuoteLineItem>();
 
-        if (mapOppToQuote.size() > 0) {
+        if (!mapOppToQuote.isEmpty()) {
             for (OpportunityLineItem objOLI : listOld) {
                 // 최신의 quote 를 target quote 로 지정
                 Quote TargetQuote = mapOppToQuote.get(objOLI.OpportunityId) != null ? mapOppToQuote.get(objOLI.OpportunityId) : null;
@@ -232,7 +232,7 @@ public with sharing class OpportunityLineItem_tr extends TriggerHandler {
             }
         }
 
-        if(listQuoteLineItemsToDelete.size() > 0) {
+        if(!listQuoteLineItemsToDelete.isEmpty()) {
             delete listQuoteLineItemsToDelete;
         }
     }
