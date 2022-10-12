@@ -64,7 +64,7 @@ public with sharing class Opportunity_tr extends TriggerHandler {
             }
         }
 
-        if(setOpportunityIds.size() > 0){
+        if(!setOpportunityIds.isEmpty()){
             List<OpportunityLineItem> listOpportunityLineItems = new List<OpportunityLineItem>([
                     SELECT  Id, PricebookEntryId, Product2Id, Quantity, UnitPrice, OpportunityId, Description
                     FROM    OpportunityLineItem
@@ -80,7 +80,7 @@ public with sharing class Opportunity_tr extends TriggerHandler {
 
             // Opty Id - Quote 매칭
             Map<Id,Quote> mapOptyIdToQuote = new Map<Id,Quote>();
-            if(listQuotes.size()>0){
+            if(!listQuotes.isEmpty()){
                 for(Quote objQuote : listQuotes){
                     if(mapOptyIdToQuote.get(objQuote.OpportunityId) == null){
                         mapOptyIdToQuote.put(objQuote.OpportunityId, objQuote);
@@ -100,7 +100,7 @@ public with sharing class Opportunity_tr extends TriggerHandler {
                 }
             }
 
-            if(listInsertQuotes.size()>0){
+            if(!listInsertQuotes.isEmpty()){
                 insert listInsertQuotes;
 
                 List<QuoteLineItem> listQuoteLineItems = new List<QuoteLineItem>();
@@ -120,7 +120,7 @@ public with sharing class Opportunity_tr extends TriggerHandler {
                         }
                     }
                 }
-                if(listQuoteLineItems.size()>0){
+                if(!listQuoteLineItems.isEmpty()){
                     insert listQuoteLineItems;
                 }
             }
